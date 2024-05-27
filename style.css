@@ -6,8 +6,8 @@
 body {
     margin: 0;
     padding: 0;
-    background: url(./img/bg.jpg);
-    background-size: contain;
+    background: url('./assets/bg.jpg');
+    background-size: auto;
     font-family: 'mono'
   }
   html,
@@ -26,14 +26,20 @@ body {
   .contentContainer {
    display: flex;
     color: white;
-    flex: 1
+    flex: 1;
   }
-  .audioCanvas {
+  .dataContainer {
+    /* border: 1px solid white; */
+    border-radius: 2em;
+    padding: 1em;
+    margin: 4em;
+    display: block;
+    height: auto;
   }
   .time {
-    margin-top: 200px;
-    margin-left: 200px;
-    font-size: 32pt;
+    font-size: 40pt;
+  }
+  .audioCanvas {
   }
   .mediaContainer {
     flex-direction: row;
@@ -55,4 +61,15 @@ body {
     z-index: -1
   }
   .media {
+  }
+  .iconImg {
+    width: 30px
+  }
+  .weather {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+  .weatherData {
   }

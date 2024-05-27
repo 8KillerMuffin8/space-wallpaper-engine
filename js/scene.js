@@ -73,9 +73,9 @@ scene.add(earthGroup);
 const detail = 18;
 const geometry = new THREE.IcosahedronGeometry(1, detail);
 const material = new THREE.MeshPhongMaterial({
-  map: loader.load("https://github.com/bobbyroe/threejs-earth/blob/main/textures/00_earthmap1k.jpg?raw=true"),
+  map: loader.load("https://github.com/8KillerMuffin8/space-wallpaper-engine/blob/main/assets/earthmap.jpg?raw=true"),
   specularMap: loader.load("https://github.com/bobbyroe/threejs-earth/blob/main/textures/02_earthspec1k.jpg?raw=true",),
-  bumpMap: loader.load("https://github.com/bobbyroe/threejs-earth/blob/main/textures/01_earthbump1k.jpg?raw=true"),
+  bumpMap: loader.load("https://github.com/8KillerMuffin8/space-wallpaper-engine/blob/main/assets/earthbump.jpg?raw=true"),
   bumpScale: 0.1,
 });
 
@@ -84,18 +84,18 @@ const earthMesh = new THREE.Mesh(geometry, material);
 earthGroup.add(earthMesh);
 
 const lightsMat = new THREE.MeshBasicMaterial({
-    map: loader.load("https://github.com/bobbyroe/threejs-earth/blob/main/textures/03_earthlights1k.jpg?raw=true"),
+    map: loader.load("https://github.com/8KillerMuffin8/space-wallpaper-engine/blob/main/assets/earthlights.jpg?raw=true"),
     blending: THREE.AdditiveBlending,
   });
   const lightsMesh = new THREE.Mesh(geometry, lightsMat);
   earthGroup.add(lightsMesh);
 
   const cloudsMat = new THREE.MeshStandardMaterial({
-    map: loader.load("https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg"),
+    map: loader.load("https://github.com/8KillerMuffin8/space-wallpaper-engine/blob/main/assets/earthclouds.jpg?raw=true"),
     transparent: true,
-    opacity: 0.8,
+    opacity: 1,
     blending: THREE.AdditiveBlending,
-    alphaMap: loader.load('https://github.com/bobbyroe/threejs-earth/blob/main/textures/05_earthcloudmaptrans.jpg?raw=true'),
+    alphaMap: loader.load('https://github.com/8KillerMuffin8/space-wallpaper-engine/blob/main/assets/earthcloudtrans.jpg?raw=true'),
     // alphaTest: 0.3,
   });
   const cloudsMesh = new THREE.Mesh(geometry, cloudsMat);
@@ -109,7 +109,7 @@ earthGroup.add(glowMesh);
 
 
 const sunLight = new THREE.DirectionalLight(0xffffff, 2);
-sunLight.position.set(-2, 0.5, -0.5);
+sunLight.position.set(-2, 1, 1);
 scene.add(sunLight);
 
 function animate() {
@@ -117,7 +117,7 @@ function animate() {
 
     earthMesh.rotation.y += 0.001;
     lightsMesh.rotation.y += 0.001;
-    cloudsMesh.rotation.y += 0.0012;
+    cloudsMesh.rotation.y += 0.0015;
     glowMesh.rotation.y += 0.001;
 
 	renderer.render( scene, camera );
